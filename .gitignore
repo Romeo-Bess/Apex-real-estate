@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Test artifacts (screenshots are large — don't commit them)
+mobile-screenshots/
+mobile-test-report.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Puppeteer cache
+.cache/

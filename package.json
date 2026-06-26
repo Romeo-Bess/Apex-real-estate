@@ -1,0 +1,21 @@
+{
+  "name": "apex-real-estate-photography",
+  "version": "1.0.0",
+  "description": "APEX Real Estate Photography — South Africa",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test:mobile": "node mobile-test.js",
+    "serve": "python -m http.server 8765"
+  },
+  "keywords": [
+    "real-estate",
+    "photography",
+    "south-africa"
+  ],
+  "author": "APEX Photography",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^25.2.1"
+  }
+}

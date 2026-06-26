@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1A1A1A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="APEX Real Estate Photography — South Africa's most trusted property photography studio. 24-hour turnaround. Serving Cape Town & Johannesburg. Trusted by Pam Golding, RE/MAX, Seeff & Rawson." />
+  <meta name="keywords" content="real estate photography Cape Town, property photography Johannesburg, drone photography South Africa, luxury property photography, APEX photography" />
+  <meta property="og:title" content="APEX Real Estate Photography | South Africa" />
+  <meta property="og:description" content="Listings that sell faster. Precision property photography with 24-hour turnaround in Cape Town & Johannesburg." />
+  <meta property="og:type" content="website" />
+  <!-- Inline SVG favicon — prevents 404 -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='1.5' y='1.5' width='33' height='33' rx='2' stroke='%23D4AF37' stroke-width='2' fill='%231A1A1A'/%3E%3Crect x='6' y='6' width='24' height='24' rx='1' stroke='%23D4AF37' stroke-width='1' fill='none'/%3E%3Cline x1='6.5' y1='6.5' x2='29.5' y2='29.5' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Cline x1='29.5' y1='6.5' x2='6.5' y2='29.5' stroke='%23D4AF37' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <title>APEX Real Estate Photography | Cape Town & Johannesburg</title>
+
+  <!-- Google Fonts: DM Sans (Avenir substitute) + Bodoni Moda (Bodoni Classic substitute) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       STICKY NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="APEX Photography home">
+        <!-- APEX Logomark: framed X -->
+        <svg class="nav-logo-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="33" height="33" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
+          <rect x="6" y="6" width="24" height="24" rx="1" stroke="#D4AF37" stroke-width="1"/>
+          <line x1="6.5" y1="6.5" x2="29.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+          <line x1="29.5" y1="6.5" x2="6.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+        </svg>
+        <div class="nav-logo-wordmark">
+          <span class="nav-logo-name">APEX</span>
+          <span class="nav-logo-sub">Real Estate Photography</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#how-it-works" class="nav-link">Process</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+      <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary nav-cta" id="nav-book-cta" target="_blank" rel="noopener noreferrer" aria-label="Book a shoot on WhatsApp">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book a Shoot
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+      <a href="#portfolio" class="nav-mobile-link">Portfolio</a>
+      <a href="#services" class="nav-mobile-link">Services</a>
+      <a href="#how-it-works" class="nav-mobile-link">Process</a>
+      <a href="#about" class="nav-mobile-link">About</a>
+      <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book via WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — Dark (Midnight Graphite)
+  ═══════════════════════════════════════════ -->
+  <section class="hero section-dark" id="hero" aria-label="Hero">
+    <div class="hero-slideshow" id="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide active" style="background-image: url('images/hero_interior.png')"></div>
+      <div class="hero-slide" style="background-image: url('images/hero_twilight.png')"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cape Town &nbsp;·&nbsp; Johannesburg</p>
+      <h1 class="hero-headline">Precision photography<br/>for <em>exceptional</em> properties.</h1>
+      <p class="hero-sub">The photography studio trusted by South Africa's leading agents.<br/>Every shoot delivered in 24 hours.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary btn-lg" id="hero-book-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book via WhatsApp
+        </a>
+        <a href="#portfolio" class="btn btn-ghost btn-lg">View Portfolio</a>
+      </div>
+      <div class="hero-guarantee">
+        <div class="hero-guarantee-item">
+          <span class="guarantee-number">24h</span>
+          <span class="guarantee-label">Delivery Guaranteed</span>
+        </div>
+        <div class="hero-guarantee-divider" aria-hidden="true"></div>
+        <div class="hero-guarantee-item">
+          <span class="guarantee-number">500+</span>
+          <span class="guarantee-label">Properties Shot</span>
+        </div>
+        <div class="hero-guarantee-divider" aria-hidden="true"></div>
+        <div class="hero-guarantee-item">
+          <span class="guarantee-number">6</span>
+          <span class="guarantee-label">Days a Week</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TRUST BAR — Dark Charcoal
+  ═══════════════════════════════════════════ -->
+  <section class="trust-bar section-charcoal" aria-label="Trust signals">
+    <div class="container">
+      <p class="trust-label">Trusted by agents at South Africa's leading agencies</p>
+      <div class="trust-agencies">
+        <span>Pam Golding</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span>RE/MAX</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span>Seeff</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span>Rawson</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span>Lew Geffen</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span>Engel &amp; Völkers</span>
+      </div>
+      <div class="trust-pillars">
+        <div class="trust-pillar">
+          <div class="trust-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <strong>24-Hour Delivery</strong>
+            <span>Every shoot. No exceptions.</span>
+          </div>
+        </div>
+        <div class="trust-pillar-divider" aria-hidden="true"></div>
+        <div class="trust-pillar">
+          <div class="trust-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>Precision Editing</strong>
+            <span>Architectural-grade retouching</span>
+          </div>
+        </div>
+        <div class="trust-pillar-divider" aria-hidden="true"></div>
+        <div class="trust-pillar">
+          <div class="trust-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <strong>Cape Town &amp; Johannesburg</strong>
+            <span>On-location, both cities</span>
+          </div>
+        </div>
+        <div class="trust-pillar-divider" aria-hidden="true"></div>
+        <div class="trust-pillar">
+          <div class="trust-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <div>
+            <strong>WhatsApp Booking</strong>
+            <span>Response within 2 hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PORTFOLIO — Dark (Midnight Graphite)
+  ═══════════════════════════════════════════ -->
+  <section class="portfolio section-dark" id="portfolio" aria-label="Portfolio">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title section-title-light">The showcase<br/><em>of exceptional estates.</em></h2>
+        <p class="section-sub section-sub-light">Explore 10 curated showcase properties across South Africa's premier postcodes.</p>
+      </div>
+
+      <div class="portfolio-filters" role="tablist" aria-label="Portfolio filter">
+        <button class="filter-btn active" id="filter-all" data-filter="all" role="tab" aria-selected="true" aria-controls="portfolio-grid">All Regions</button>
+        <button class="filter-btn" id="filter-cpt" data-filter="cpt" role="tab" aria-selected="false" aria-controls="portfolio-grid">Cape Town</button>
+        <button class="filter-btn" id="filter-jhb" data-filter="jhb" role="tab" aria-selected="false" aria-controls="portfolio-grid">Johannesburg</button>
+        <button class="filter-btn" id="filter-winelands" data-filter="winelands" role="tab" aria-selected="false" aria-controls="portfolio-grid">Winelands</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid" role="tabpanel">
+        <!-- Property 1: Cape Town Penthouse (CPT) -->
+        <div class="portfolio-item featured" data-category="cpt" id="prop-1" data-images="images/hero_interior.png,images/prop1_terrace.png,images/portfolio_kitchen.png" data-title="Atlantic Seaboard Penthouse" data-location="Bantry Bay, Cape Town">
+          <img src="images/hero_interior.png" alt="Prestige penthouse master living salon overlooking the Atlantic Ocean, Bantry Bay" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Cape Town</span>
+              <span class="portfolio-count">3 Images</span>
+            </div>
+            <h3>Atlantic Seaboard Penthouse</h3>
+            <p class="portfolio-location">Bantry Bay, Cape Town</p>
+          </div>
+        </div>
+
+        <!-- Property 2: Constantia Cape Dutch Manor (Winelands) -->
+        <div class="portfolio-item" data-category="winelands" id="prop-2" data-images="images/prop2_exterior.png,images/prop2_interior.png,images/portfolio_drone.png" data-title="Historic Constantia Manor" data-location="Constantia Valley, Cape Town">
+          <img src="images/prop2_exterior.png" alt="Historic Cape Dutch colonial manor front facade and gables, Constantia Valley" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Winelands</span>
+              <span class="portfolio-count">3 Images</span>
+            </div>
+            <h3>Historic Constantia Manor</h3>
+            <p class="portfolio-location">Constantia, Cape Town</p>
+          </div>
+        </div>
+
+        <!-- Property 3: Camps Bay Infinity Villa (CPT) -->
+        <div class="portfolio-item" data-category="cpt" id="prop-3" data-images="images/prop3_pool.png,images/prop3_interior.png,images/prop3_twilight.png" data-title="Camps Bay Infinity Villa" data-location="Camps Bay, Cape Town">
+          <img src="images/prop3_pool.png" alt="Ultra-modern villa infinity swimming pool facing the Twelve Apostles mountains, Camps Bay" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Cape Town</span>
+              <span class="portfolio-count">3 Images</span>
+            </div>
+            <h3>Camps Bay Infinity Villa</h3>
+            <p class="portfolio-location">Camps Bay, Cape Town</p>
+          </div>
+        </div>
+
+        <!-- Property 4: Bishopscourt Country House (CPT) -->
+        <div class="portfolio-item" data-category="cpt" id="prop-4" data-images="images/prop4_facade.png,images/prop4_lounge.png,images/prop4_garden.png,images/portfolio_bedroom.png" data-title="Bishopscourt Country House" data-location="Bishopscourt, Cape Town">
+          <img src="images/prop4_facade.png" alt="Grand contemporary stone meets slate country home facade, Bishopscourt" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Cape Town</span>
+              <span class="portfolio-count">4 Images</span>
+            </div>
+            <h3>Bishopscourt Country House</h3>
+            <p class="portfolio-location">Bishopscourt, Cape Town</p>
+          </div>
+        </div>
+
+        <!-- Property 5: Sandton Contemporary Mansion (JHB) -->
+        <div class="portfolio-item" data-category="jhb" id="prop-5" data-images="images/portfolio_exterior.png,images/portfolio_twilight2.png" data-title="Sandton Architectural Mansion" data-location="Morningside, Sandton">
+          <img src="images/portfolio_exterior.png" alt="Brutalist concrete architecture family mansion facade, Sandton" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Johannesburg</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Sandton Architectural Mansion</h3>
+            <p class="portfolio-location">Morningside, Sandton</p>
+          </div>
+        </div>
+
+        <!-- Property 6: Hyde Park Modern Residence (JHB) -->
+        <div class="portfolio-item" data-category="jhb" id="prop-6" data-images="images/hero_twilight.png,images/portfolio_twilight2.png" data-title="Hyde Park Glass Estate" data-location="Hyde Park, Johannesburg">
+          <img src="images/portfolio_twilight2.png" alt="Contemporary luxury estate with dramatic facade glass and uplighting at twilight, Hyde Park" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Johannesburg</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Hyde Park Glass Estate</h3>
+            <p class="portfolio-location">Hyde Park, Johannesburg</p>
+          </div>
+        </div>
+
+        <!-- Property 7: Clifton Cliffside Residence (CPT) -->
+        <div class="portfolio-item" data-category="cpt" id="prop-7" data-images="images/hero_interior.png,images/prop1_terrace.png" data-title="Clifton Cliffside Sanctuary" data-location="Clifton Beach, Cape Town">
+          <img src="images/prop1_terrace.png" alt="Luxury wood deck and custom terrace lounge with ocean sunset view, Clifton" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Cape Town</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Clifton Cliffside Sanctuary</h3>
+            <p class="portfolio-location">Clifton Beach, Cape Town</p>
+          </div>
+        </div>
+
+        <!-- Property 8: Franschhoek Estate (Winelands) -->
+        <div class="portfolio-item" data-category="winelands" id="prop-8" data-images="images/prop2_exterior.png,images/portfolio_drone.png" data-title="Franschhoek Country Pavilion" data-location="Franschhoek, Winelands">
+          <img src="images/portfolio_drone.png" alt="Ariel view of vineyard rows and central luxury homestead, Franschhoek" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Winelands</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Franschhoek Country Pavilion</h3>
+            <p class="portfolio-location">Franschhoek Valley</p>
+          </div>
+        </div>
+
+        <!-- Property 9: Westcliff View Villa (JHB) -->
+        <div class="portfolio-item" data-category="jhb" id="prop-9" data-images="images/prop3_interior.png,images/prop4_lounge.png" data-title="Westcliff Ridge Villa" data-location="Westcliff, Johannesburg">
+          <img src="images/prop3_interior.png" alt="Double-height formal lounge with grand piano and bespoke stone cladding, Westcliff Ridge" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Johannesburg</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Westcliff Ridge Villa</h3>
+            <p class="portfolio-location">Westcliff, Johannesburg</p>
+          </div>
+        </div>
+
+        <!-- Property 10: Steyn City Modern Estate (JHB) -->
+        <div class="portfolio-item" data-category="jhb" id="prop-10" data-images="images/prop4_facade.png,images/prop3_pool.png" data-title="Steyn City Parkland Estate" data-location="Steyn City, Johannesburg">
+          <img src="images/prop3_pool.png" alt="Parkland villa exterior deck overlooking the estate fairway and green, Steyn City" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">Johannesburg</span>
+              <span class="portfolio-count">2 Images</span>
+            </div>
+            <h3>Steyn City Parkland Estate</h3>
+            <p class="portfolio-location">Steyn City, Johannesburg</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-cta-wrap">
+        <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary btn-lg" id="portfolio-book-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Your Shoot
+        </a>
+        <p class="portfolio-cta-note">24-hour delivery. No exceptions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES & PRICING — Light (Warm Cream)
+  ═══════════════════════════════════════════ -->
+  <section class="services section-light" id="services" aria-label="Services and pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Services &amp; Pricing</p>
+        <h2 class="section-title">Everything your<br/><em>listing needs.</em></h2>
+        <p class="section-sub">Transparent pricing. Delivered in 24 hours. No surprises.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Essential -->
+        <div class="service-card" id="service-essential">
+          <div class="service-card-top">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </div>
+            <h3>Essential</h3>
+            <div class="service-price">
+              <span class="price-from">from</span>
+              <span class="price-amount">R2 500</span>
+            </div>
+          </div>
+          <p class="service-desc">For apartments and smaller homes. A complete, professional listing foundation.</p>
+          <ul class="service-list">
+            <li>Up to 25 edited photos</li>
+            <li>Interior &amp; exterior shots</li>
+            <li>Professional HDR editing</li>
+            <li>24-hour delivery</li>
+            <li>High-res &amp; web versions</li>
+          </ul>
+          <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20the%20APEX%20Essential%20package" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer" id="cta-essential">Book Essential</a>
+        </div>
+
+        <!-- Premium (featured) -->
+        <div class="service-card service-card--featured" id="service-premium">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-card-top">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg>
+            </div>
+            <h3>Premium</h3>
+            <div class="service-price">
+              <span class="price-from">from</span>
+              <span class="price-amount">R4 500</span>
+            </div>
+          </div>
+          <p class="service-desc">For mid-to-high-value listings where visual presentation is everything.</p>
+          <ul class="service-list">
+            <li>Up to 40 edited photos</li>
+            <li>Full interior &amp; exterior</li>
+            <li>Twilight shoot included</li>
+            <li>Virtual staging (2 rooms)</li>
+            <li>Floor plan diagram</li>
+            <li>24-hour delivery</li>
+            <li>High-res + web versions</li>
+          </ul>
+          <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20the%20APEX%20Premium%20package" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="cta-premium">Book Premium</a>
+        </div>
+
+        <!-- Estate -->
+        <div class="service-card" id="service-estate">
+          <div class="service-card-top">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Estate</h3>
+            <div class="service-price">
+              <span class="price-from">from</span>
+              <span class="price-amount">R7 500</span>
+            </div>
+          </div>
+          <p class="service-desc">The complete package for prestige and luxury properties. Uncompromising.</p>
+          <ul class="service-list">
+            <li>Unlimited edited photos</li>
+            <li>Full interior &amp; exterior</li>
+            <li>Twilight shoot</li>
+            <li>Drone aerial photography</li>
+            <li>60-second video walkthrough</li>
+            <li>Virtual staging (4 rooms)</li>
+            <li>24h photo / 48h video delivery</li>
+          </ul>
+          <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20the%20APEX%20Estate%20package" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer" id="cta-estate">Book Estate</a>
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <div class="addons-section">
+        <h3 class="addons-title">À la carte add-ons</h3>
+        <div class="addons-grid">
+          <div class="addon-item" id="addon-drone"><span>Drone shoot</span><span class="addon-price">R1 200</span></div>
+          <div class="addon-item" id="addon-twilight"><span>Twilight shoot</span><span class="addon-price">R900</span></div>
+          <div class="addon-item" id="addon-video"><span>Video walkthrough</span><span class="addon-price">R2 000</span></div>
+          <div class="addon-item" id="addon-staging"><span>Virtual staging / room</span><span class="addon-price">R350</span></div>
+          <div class="addon-item" id="addon-rush"><span>4-hour rush delivery</span><span class="addon-price">R800</span></div>
+          <div class="addon-item" id="addon-floorplan"><span>Floor plan</span><span class="addon-price">R450</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS — Dark (Midnight Graphite)
+  ═══════════════════════════════════════════ -->
+  <section class="process section-dark" id="how-it-works" aria-label="How it works">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">The Process</p>
+        <h2 class="section-title section-title-light">Three steps.<br/><em>Zero friction.</em></h2>
+        <p class="section-sub section-sub-light">Engineered for busy agents who don't have time for complicated.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" id="step-1">
+          <div class="step-num" aria-hidden="true">01</div>
+          <h3>WhatsApp us your address</h3>
+          <p>Send the property address and preferred date. We confirm within 2 hours and lock in your slot.</p>
+        </div>
+        <div class="process-connector" aria-hidden="true">
+          <svg width="40" height="2" viewBox="0 0 40 2"><line x1="0" y1="1" x2="40" y2="1" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/></svg>
+        </div>
+        <div class="process-step" id="step-2">
+          <div class="step-num" aria-hidden="true">02</div>
+          <h3>We shoot. You focus on clients.</h3>
+          <p>Our photographer arrives on time, manages the full shoot, and ensures every frame is magazine-worthy.</p>
+        </div>
+        <div class="process-connector" aria-hidden="true">
+          <svg width="40" height="2" viewBox="0 0 40 2"><line x1="0" y1="1" x2="40" y2="1" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/></svg>
+        </div>
+        <div class="process-step" id="step-3">
+          <div class="step-num" aria-hidden="true">03</div>
+          <h3>Gallery in your inbox in 24 hours</h3>
+          <p>Fully edited, high-resolution images delivered via private download link. Ready to list.</p>
+        </div>
+      </div>
+
+      <div class="process-cta">
+        <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary btn-lg" id="process-book-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Start with a WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS — Light (Blush Stone / Cream)
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials section-blush" id="testimonials" aria-label="Client testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Client Stories</p>
+        <h2 class="section-title">Agents who refuse<br/><em>to settle for less.</em></h2>
+        <p class="section-sub">The standard you've come to expect from South Africa's top agencies.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card" id="testimonial-1">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <blockquote>"I listed on a Tuesday. By Wednesday morning I had three viewing requests. The photos were stunning — clients said 'we need to see this' before even reading the description."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">SV</div>
+            <div>
+              <strong>Sarah van der Merwe</strong>
+              <span>Principal Agent · Pam Golding, Atlantic Seaboard</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-2">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <blockquote>"I've used five different photographers in Johannesburg. Nobody else offers 24-hour delivery without compromising quality. APEX is the only studio I trust with my prestige listings."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">MN</div>
+            <div>
+              <strong>Michelle Nkosi</strong>
+              <span>Senior Agent · RE/MAX, Sandton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-3">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <blockquote>"The twilight shoot sold a property that had been sitting for 6 weeks. Same house, better photos — offer received within 48 hours. That says everything about APEX's work."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">TJ</div>
+            <div>
+              <strong>Tamara Joubert</strong>
+              <span>Area Specialist · Seeff, Constantia &amp; Bishopscourt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-4">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <blockquote>"WhatsApp booking, fast turnaround, exceptional quality. I book APEX for every listing over R3 million. It's a non-negotiable line item in my marketing budget."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">KD</div>
+            <div>
+              <strong>Karen du Plessis</strong>
+              <span>Luxury Property Specialist · Rawson, Hout Bay</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT — Dark (Midnight Graphite)
+  ═══════════════════════════════════════════ -->
+  <section class="about section-dark" id="about" aria-label="About APEX Photography">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <img src="images/portrait_photographer.png" alt="APEX Photography founder with camera in luxury property" class="about-img" loading="lazy" />
+          <div class="about-img-frame" aria-hidden="true"></div>
+          <!-- Inline brand quote -->
+          <div class="about-brand-quote" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1.5" y="1.5" width="33" height="33" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
+              <rect x="6" y="6" width="24" height="24" rx="1" stroke="#D4AF37" stroke-width="1"/>
+              <line x1="6.5" y1="6.5" x2="29.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+              <line x1="29.5" y1="6.5" x2="6.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+            </svg>
+            <span>The Porsche of<br/>real estate photography.</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="section-eyebrow">About APEX</p>
+          <h2 class="section-title section-title-light">Built for agents<br/>who <em>don't compromise.</em></h2>
+          <p class="about-text">APEX was built on a single observation: great agents were losing deals over average photography. Buyers decide in seconds online. Your listing gets one chance.</p>
+          <p class="about-text">We shoot exclusively residential property. No events. No commercial. Just property — executed at the highest standard. Every composition follows the principle that leading lines draw the eye, clean light tells the truth, and precision retouching honours the architecture.</p>
+          <p class="about-text">Available 6 days a week across Cape Town and Johannesburg. Delivered in 24 hours. Every time.</p>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Properties Shot</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Days a Week</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-number">24h</span>
+              <span class="stat-label">Guaranteed Delivery</span>
+            </div>
+          </div>
+
+          <div class="about-philosophy">
+            <h4>The APEX Standard</h4>
+            <ul>
+              <li>Perfect vertical &amp; horizontal alignment on every frame</li>
+              <li>Natural light — no over-saturation, no artificial drama</li>
+              <li>Strong leading lines that direct the eye to key features</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FINAL CTA — Dark with image
+  ═══════════════════════════════════════════ -->
+  <section class="final-cta section-dark" id="contact" aria-label="Book a shoot">
+    <div class="final-cta-bg" aria-hidden="true" style="background-image: url('images/hero_twilight.png')"></div>
+    <div class="final-cta-overlay" aria-hidden="true"></div>
+    <div class="container final-cta-content">
+      <!-- APEX mark centred -->
+      <div class="final-apex-mark" aria-hidden="true">
+        <svg width="52" height="52" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="33" height="33" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
+          <rect x="6" y="6" width="24" height="24" rx="1" stroke="#D4AF37" stroke-width="1"/>
+          <line x1="6.5" y1="6.5" x2="29.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+          <line x1="29.5" y1="6.5" x2="6.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <p class="section-eyebrow">Ready to List?</p>
+      <h2 class="final-cta-title">Your next listing<br/><em>deserves this.</em></h2>
+      <p class="final-cta-sub">Book via WhatsApp. Shoot this week. Gallery in 24 hours.</p>
+      <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20property%20shoot%20with%20APEX" class="btn btn-primary btn-xl" id="final-book-cta" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp to Book Now
+      </a>
+      <p class="final-cta-email-line">Or email <a href="mailto:hello@apexphotography.co.za" class="final-email-link">hello@apexphotography.co.za</a></p>
+      <div class="final-delivery-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        24-hour delivery. Every time.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="33" height="33" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
+            <rect x="6" y="6" width="24" height="24" rx="1" stroke="#D4AF37" stroke-width="1"/>
+            <line x1="6.5" y1="6.5" x2="29.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+            <line x1="29.5" y1="6.5" x2="6.5" y2="29.5" stroke="#D4AF37" stroke-width="1.2"/>
+          </svg>
+          <span>APEX</span>
+        </div>
+        <p class="footer-tagline">Real Estate Photography.<br/>Cape Town &amp; Johannesburg.</p>
+        <p class="footer-sub-tagline">Luxury · Trust · Sophistication</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Essential Package</a>
+          <a href="#services">Premium Package</a>
+          <a href="#services">Estate Package</a>
+          <a href="#services">Drone Photography</a>
+          <a href="#services">Twilight Shoots</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About APEX</a>
+          <a href="#testimonials">Client Reviews</a>
+          <a href="mailto:hello@apexphotography.co.za">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Book a Shoot</h4>
+          <a href="https://wa.me/27821234567" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+          <a href="mailto:hello@apexphotography.co.za">Email Us</a>
+          <p class="footer-detail">Cape Town: +27 82 123 4567</p>
+          <p class="footer-detail">JHB: +27 82 765 4321</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2025 APEX Real Estate Photography. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating CTA -->
+  <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20property%20shoot%20with%20APEX" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-tooltip">Book a Shoot</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
