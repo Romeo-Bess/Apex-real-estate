@@ -1,7 +1,7 @@
 # APEX Real Estate Photography
 
-**South Africa's most trusted real estate photography studio.**  
-Professional property photography with 24-hour turnaround. Serving Cape Town & Johannesburg.
+**Cape Town's most trusted real estate photography studio.**  
+Professional property photography with 24-hour turnaround. Serving greater Cape Town.
 
 🌐 **Live site:** [apexphotography.co.za](https://apex-real-estate.vercel.app)
 
@@ -25,7 +25,10 @@ Professional property photography with 24-hour turnaround. Serving Cape Town & J
 /
 ├── index.html          # Single-page site
 ├── styles.css          # All styling (design tokens + components)
-├── script.js           # Interactions (nav, slideshow, filter, lightbox)
+├── catalogue.css       # Property catalogue / project view styling
+├── script.js           # Interactions (nav, slideshow, reveal animations)
+├── properties.js       # Property catalogue data (photos + video per property)
+├── catalogue.js        # PropertyCard + ProjectView components
 ├── images/             # AI-generated property photography
 ├── vercel.json         # Vercel deployment config
 ├── mobile-test.js      # Puppeteer mobile test suite

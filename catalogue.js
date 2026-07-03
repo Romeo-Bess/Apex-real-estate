@@ -19,8 +19,10 @@
 
 (() => {
 
-  const REGION_LABELS = { cpt: 'Cape Town', jhb: 'Johannesburg', winelands: 'Winelands' };
   const WA_NUMBER = '27821234567';
+
+  /* Card tag shows the suburb — the part of `location` before the comma */
+  const suburbOf = p => String(p.location || '').split(',')[0].trim() || 'Cape Town';
 
   /* ─── SANITIZERS ─────────────────────────────────────────── */
   const SAFE_PHOTO = /^images\/[A-Za-z0-9._-]+\.(?:png|jpe?g|webp|avif)$/i;
@@ -86,7 +88,6 @@
 
     const card = el('div', 'portfolio-item' + (property.featured ? ' featured' : ''));
     card.id = `prop-${property.id}`;
-    card.dataset.category = property.region;
     card.setAttribute('aria-label', `Open project: ${property.title}, ${property.location}`);
 
     const img = el('img');
@@ -99,7 +100,7 @@
 
     const overlay = el('div', 'portfolio-overlay');
     const meta = el('div', 'portfolio-meta');
-    meta.appendChild(el('span', 'portfolio-tag', REGION_LABELS[property.region] || 'South Africa'));
+    meta.appendChild(el('span', 'portfolio-tag', suburbOf(property)));
     meta.appendChild(el('span', 'portfolio-count', `${photos.length} Frames`));
     if (sanitizeVideoUrl(property.video)) {
       meta.appendChild(el('span', 'portfolio-film-badge', '▸ Film'));
@@ -306,7 +307,7 @@
       videoUrl = sanitizeVideoUrl(property.video);
       lastFocus = sourceEl || document.activeElement;
 
-      fileEl.textContent = `Project File ${pad(index + 1)} · ${(REGION_LABELS[property.region] || '').toUpperCase()}`;
+      fileEl.textContent = `Project File ${pad(index + 1)} · Cape Town`;
       titleEl.textContent = property.title;
       locEl.textContent = property.location;
       briefEl.textContent = property.description || '';
