@@ -261,7 +261,7 @@ const lightbox = (() => {
     fontSize: '1.1rem',
     fontWeight: '600',
     letterSpacing: '0.03em',
-    color: '#FFFSE6'
+    color: '#FFF5E6'
   });
 
   const locEl = document.createElement('p');

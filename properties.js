@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════════════════
+   PROPERTY CATALOGUE — DATA
+   Single source of truth for every showcase property.
+
+   To add a property:
+     1. Drop its photos into /images
+     2. Append one object to the array below
+     3. Done — card, gallery and walkthrough render themselves.
+
+   `video` accepts YouTube (watch / youtu.be / embed) or Vimeo
+   URLs. catalogue.js validates and rewrites it to a privacy-
+   enhanced embed before rendering; anything else is dropped.
+
+   The demo video below is a stable public placeholder —
+   replace it with your own walkthrough URLs.
+   ═══════════════════════════════════════════════════════════ */
+
+'use strict';
+
+window.PROPERTIES = [
+  {
+    id: 'bantry-bay-penthouse',
+    title: 'Atlantic Seaboard Penthouse',
+    location: 'Bantry Bay, Cape Town',
+    region: 'cpt',            /* cpt | jhb | winelands — drives the filter tabs */
+    featured: true,           /* featured card takes the wide grid slot */
+    description: 'A double-volume penthouse suspended above the Atlantic. Shot at golden hour to carry the ocean light through the master salon, terrace and kitchen.',
+    services: ['HDR Stills', 'Twilight', 'Walkthrough'],
+    photos: [
+      'images/hero_interior.png',
+      'images/prop1_terrace.png',
+      'images/portfolio_kitchen.png'
+    ],
+    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+  },
+  {
+    id: 'constantia-manor',
+    title: 'Historic Constantia Manor',
+    location: 'Constantia Valley, Cape Town',
+    region: 'winelands',
+    description: 'A Cape Dutch original under centuries-old oaks. Facade symmetry, gable detail and aerial context frames of the werf and vineyards.',
+    services: ['HDR Stills', 'Drone'],
+    photos: [
+      'images/prop2_exterior.png',
+      'images/prop2_interior.png',
+      'images/portfolio_drone.png'
+    ],
+    video: null
+  },
+  {
+    id: 'camps-bay-infinity-villa',
+    title: 'Camps Bay Infinity Villa',
+    location: 'Camps Bay, Cape Town',
+    region: 'cpt',
+    description: 'Ultra-modern villa against the Twelve Apostles. The infinity edge, formal lounge and a twilight closer shot thirty minutes after sunset.',
+    services: ['HDR Stills', 'Twilight', 'Walkthrough'],
+    photos: [
+      'images/prop3_pool.png',
+      'images/prop3_interior.png',
+      'images/prop3_twilight.png'
+    ],
+    video: 'https://youtu.be/aqz-KE-bpKQ'
+  },
+  {
+    id: 'bishopscourt-country-house',
+    title: 'Bishopscourt Country House',
+    location: 'Bishopscourt, Cape Town',
+    region: 'cpt',
+    description: 'Stone-and-slate country home on a manicured erf. Full coverage: facade, formal lounge, garden axis and principal suite.',
+    services: ['HDR Stills', 'Virtual Staging'],
+    photos: [
+      'images/prop4_facade.png',
+      'images/prop4_lounge.png',
+      'images/prop4_garden.png',
+      'images/portfolio_bedroom.png'
+    ],
+    video: null
+  },
+  {
+    id: 'sandton-architectural-mansion',
+    title: 'Sandton Architectural Mansion',
+    location: 'Morningside, Sandton',
+    region: 'jhb',
+    description: 'Brutalist concrete softened by uplighting. Shot day and twilight to sell both the architecture and the atmosphere.',
+    services: ['HDR Stills', 'Twilight', 'Walkthrough'],
+    photos: [
+      'images/portfolio_exterior.png',
+      'images/portfolio_twilight2.png'
+    ],
+    video: 'https://www.youtube.com/embed/aqz-KE-bpKQ'
+  },
+  {
+    id: 'hyde-park-glass-estate',
+    title: 'Hyde Park Glass Estate',
+    location: 'Hyde Park, Johannesburg',
+    region: 'jhb',
+    description: 'A glass pavilion estate that only reveals itself after dark. Twilight-led set with dramatic facade uplighting.',
+    services: ['Twilight', 'HDR Stills'],
+    photos: [
+      'images/portfolio_twilight2.png',
+      'images/hero_twilight.png'
+    ],
+    video: null
+  },
+  {
+    id: 'clifton-cliffside-sanctuary',
+    title: 'Clifton Cliffside Sanctuary',
+    location: 'Clifton Beach, Cape Town',
+    region: 'cpt',
+    description: 'Terraced decks stepping down the cliff toward Clifton Fourth. Sunset terrace lead frame with interior follow-ups.',
+    services: ['HDR Stills', 'Walkthrough'],
+    photos: [
+      'images/prop1_terrace.png',
+      'images/hero_interior.png'
+    ],
+    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+  },
+  {
+    id: 'franschhoek-country-pavilion',
+    title: 'Franschhoek Country Pavilion',
+    location: 'Franschhoek, Winelands',
+    region: 'winelands',
+    description: 'Homestead at the centre of working vineyard rows. Drone-led coverage to establish scale and setting.',
+    services: ['Drone', 'HDR Stills'],
+    photos: [
+      'images/portfolio_drone.png',
+      'images/prop2_exterior.png'
+    ],
+    video: null
+  },
+  {
+    id: 'westcliff-ridge-villa',
+    title: 'Westcliff Ridge Villa',
+    location: 'Westcliff, Johannesburg',
+    region: 'jhb',
+    description: 'Double-volume formal lounge with bespoke stone cladding, shot to hold detail from the grand piano to the ridge view.',
+    services: ['HDR Stills'],
+    photos: [
+      'images/prop3_interior.png',
+      'images/prop4_lounge.png'
+    ],
+    video: null
+  },
+  {
+    id: 'steyn-city-parkland-estate',
+    title: 'Steyn City Parkland Estate',
+    location: 'Steyn City, Johannesburg',
+    region: 'jhb',
+    description: 'Parkland villa over the estate fairway. Pool deck lead with facade support frames at midday and dusk.',
+    services: ['HDR Stills', 'Drone', 'Walkthrough'],
+    photos: [
+      'images/prop3_pool.png',
+      'images/prop4_facade.png'
+    ],
+    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+  }
+];

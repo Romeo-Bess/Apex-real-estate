@@ -11,6 +11,9 @@ mobile-test-report.json
 Thumbs.db
 desktop.ini
 
+# Claude Code local tooling
+.claude/
+
 # Editor
 .vscode/
 .idea/
