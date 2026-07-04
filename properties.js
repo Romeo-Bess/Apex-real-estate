@@ -10,6 +10,10 @@
 
    The card tag shows the suburb (first part of `location`).
 
+   `type` drives the catalogue filter tabs: house | villa |
+   apartment | estate. Filter buttons render automatically
+   from whichever types exist in this file.
+
    `video` accepts YouTube (watch / youtu.be / embed) or Vimeo
    URLs. catalogue.js validates and rewrites it to a privacy-
    enhanced embed before rendering; anything else is dropped.
@@ -23,6 +27,7 @@
 window.PROPERTIES = [
   {
     id: 'bantry-bay-penthouse',
+    type: 'apartment',
     title: 'Atlantic Seaboard Penthouse',
     location: 'Bantry Bay, Cape Town',
     featured: true,           /* featured card takes the wide grid slot */
@@ -37,6 +42,7 @@ window.PROPERTIES = [
   },
   {
     id: 'constantia-manor',
+    type: 'estate',
     title: 'Historic Constantia Manor',
     location: 'Constantia Valley, Cape Town',
     description: 'A Cape Dutch original under centuries-old oaks. Facade symmetry, gable detail and aerial context frames of the werf and vineyards.',
@@ -50,6 +56,7 @@ window.PROPERTIES = [
   },
   {
     id: 'camps-bay-infinity-villa',
+    type: 'villa',
     title: 'Camps Bay Infinity Villa',
     location: 'Camps Bay, Cape Town',
     description: 'Ultra-modern villa against the Twelve Apostles. The infinity edge, formal lounge and a twilight closer shot thirty minutes after sunset.',
@@ -63,6 +70,7 @@ window.PROPERTIES = [
   },
   {
     id: 'bishopscourt-country-house',
+    type: 'house',
     title: 'Bishopscourt Country House',
     location: 'Bishopscourt, Cape Town',
     description: 'Stone-and-slate country home on a manicured erf. Full coverage: facade, formal lounge, garden axis and principal suite.',
@@ -77,6 +85,7 @@ window.PROPERTIES = [
   },
   {
     id: 'fresnaye-architectural-mansion',
+    type: 'house',
     title: 'Fresnaye Architectural Mansion',
     location: 'Fresnaye, Cape Town',
     description: 'Brutalist concrete softened by uplighting. Shot day and twilight to sell both the architecture and the atmosphere.',
@@ -89,6 +98,7 @@ window.PROPERTIES = [
   },
   {
     id: 'higgovale-glass-estate',
+    type: 'estate',
     title: 'Higgovale Glass Estate',
     location: 'Higgovale, Cape Town',
     description: 'A glass pavilion estate on the slopes of Table Mountain that only reveals itself after dark. Twilight-led set with dramatic facade uplighting.',
@@ -101,6 +111,7 @@ window.PROPERTIES = [
   },
   {
     id: 'clifton-cliffside-sanctuary',
+    type: 'villa',
     title: 'Clifton Cliffside Sanctuary',
     location: 'Clifton Beach, Cape Town',
     description: 'Terraced decks stepping down the cliff toward Clifton Fourth. Sunset terrace lead frame with interior follow-ups.',
@@ -113,6 +124,7 @@ window.PROPERTIES = [
   },
   {
     id: 'durbanville-vineyard-pavilion',
+    type: 'estate',
     title: 'Durbanville Vineyard Pavilion',
     location: 'Durbanville Valley, Cape Town',
     description: 'Homestead at the centre of working vineyard rows. Drone-led coverage to establish scale and setting.',
@@ -125,6 +137,7 @@ window.PROPERTIES = [
   },
   {
     id: 'hout-bay-ridge-villa',
+    type: 'villa',
     title: 'Hout Bay Ridge Villa',
     location: 'Hout Bay, Cape Town',
     description: 'Double-volume formal lounge with bespoke stone cladding, shot to hold detail from the grand piano to the harbour view.',
@@ -137,6 +150,7 @@ window.PROPERTIES = [
   },
   {
     id: 'noordhoek-parkland-estate',
+    type: 'house',
     title: 'Noordhoek Parkland Estate',
     location: 'Noordhoek, Cape Town',
     description: 'Parkland villa above the valley. Pool deck lead with facade support frames at midday and dusk.',

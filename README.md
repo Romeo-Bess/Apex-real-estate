@@ -3,7 +3,11 @@
 **Cape Town's most trusted real estate photography studio.**  
 Professional property photography with 24-hour turnaround. Serving greater Cape Town.
 
-🌐 **Live site:** [apexphotography.co.za](https://apex-real-estate.vercel.app)
+🌐 **Live site:** check the Vercel dashboard (project → Domains) for the deployment URL.
+<!-- NOTE: the old link (apex-real-estate.vercel.app) belongs to a DIFFERENT
+     Vercel project and is not this site. Replace this line with your real
+     production URL once confirmed. -->
+
 
 ---
 

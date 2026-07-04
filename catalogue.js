@@ -24,6 +24,12 @@
   /* Card tag shows the suburb — the part of `location` before the comma */
   const suburbOf = p => String(p.location || '').split(',')[0].trim() || 'Cape Town';
 
+  /* Property types drive the filter tabs. Order fixes tab order;
+     only types that exist in the data get a button. */
+  const TYPE_ORDER = ['house', 'villa', 'apartment', 'estate'];
+  const TYPE_LABELS = { house: 'Houses', villa: 'Villas', apartment: 'Apartments', estate: 'Estates' };
+  const TYPE_SINGULAR = { house: 'House', villa: 'Villa', apartment: 'Apartment', estate: 'Estate' };
+
   /* ─── SANITIZERS ─────────────────────────────────────────── */
   const SAFE_PHOTO = /^images\/[A-Za-z0-9._-]+\.(?:png|jpe?g|webp|avif)$/i;
   const safePhotos = list =>
@@ -88,6 +94,7 @@
 
     const card = el('div', 'portfolio-item' + (property.featured ? ' featured' : ''));
     card.id = `prop-${property.id}`;
+    card.dataset.category = property.type || 'property';
     card.setAttribute('aria-label', `Open project: ${property.title}, ${property.location}`);
 
     const img = el('img');
@@ -98,19 +105,22 @@
     img.decoding = 'async';
     blurUp(img);
 
-    const overlay = el('div', 'portfolio-overlay');
-    const meta = el('div', 'portfolio-meta');
-    meta.appendChild(el('span', 'portfolio-tag', suburbOf(property)));
-    meta.appendChild(el('span', 'portfolio-count', `${photos.length} Frames`));
+    const scrim = el('div', 'card-scrim');
+
+    const badges = el('div', 'card-badges');
+    badges.appendChild(el('span', 'card-type', TYPE_SINGULAR[property.type] || 'Property'));
     if (sanitizeVideoUrl(property.video)) {
-      meta.appendChild(el('span', 'portfolio-film-badge', '▸ Film'));
+      badges.appendChild(el('span', 'portfolio-film-badge', '▸ Film'));
     }
-    overlay.appendChild(meta);
-    overlay.appendChild(el('h3', null, property.title));
-    overlay.appendChild(el('p', 'portfolio-location', property.location));
+
+    const info = el('div', 'card-info');
+    info.appendChild(el('h3', 'card-title', property.title));
+    info.appendChild(el('p', 'card-sub', `${suburbOf(property)} · ${photos.length} Frames`));
 
     card.appendChild(img);
-    card.appendChild(overlay);
+    card.appendChild(scrim);
+    card.appendChild(badges);
+    card.appendChild(info);
 
     const openView = () => ProjectView.open(property, index, card);
     card.addEventListener('click', openView);
@@ -307,7 +317,7 @@
       videoUrl = sanitizeVideoUrl(property.video);
       lastFocus = sourceEl || document.activeElement;
 
-      fileEl.textContent = `Project File ${pad(index + 1)} · Cape Town`;
+      fileEl.textContent = `Project File ${pad(index + 1)} · ${TYPE_SINGULAR[property.type] || 'Property'} · Cape Town`;
       titleEl.textContent = property.title;
       locEl.textContent = property.location;
       briefEl.textContent = property.description || '';
@@ -371,7 +381,12 @@
 
   /* ─── RENDER THE CATALOGUE ───────────────────────────────── */
   const grid = document.getElementById('portfolio-grid');
-  if (grid && Array.isArray(window.PROPERTIES)) {
+  if (grid && (!Array.isArray(window.PROPERTIES) || !window.PROPERTIES.length)) {
+    /* properties.js failed to load — never leave the section silently empty */
+    grid.appendChild(el('p', 'catalogue-fallback',
+      'The property showcase could not be loaded. Please refresh the page, or contact us on WhatsApp to receive our portfolio directly.'));
+  }
+  if (grid && Array.isArray(window.PROPERTIES) && window.PROPERTIES.length) {
     const frag = document.createDocumentFragment();
     window.PROPERTIES.forEach((p, i) => {
       const card = PropertyCard(p, i);
@@ -379,6 +394,43 @@
     });
     grid.textContent = '';
     grid.appendChild(frag);
+
+    /* ─── TYPE FILTER TABS ───────────────────────────────────
+       Derived from the data — a new `type` in properties.js gets
+       a tab automatically. The buttons exist before script.js
+       loads, so its existing filter logic (show/hide by
+       data-category) binds to them unchanged; the listener here
+       only adds the staggered re-entrance animation. */
+    const filters = document.getElementById('portfolio-filters');
+    if (filters) {
+      const counts = {};
+      window.PROPERTIES.forEach(p => { counts[p.type] = (counts[p.type] || 0) + 1; });
+
+      const replay = () => requestAnimationFrame(() => {
+        grid.classList.remove('replay');
+        void grid.offsetWidth; /* restart the CSS animation */
+        grid.classList.add('replay');
+      });
+
+      const makeBtn = (filter, label, count, active) => {
+        const btn = el('button', 'filter-btn' + (active ? ' active' : ''));
+        btn.type = 'button';
+        btn.dataset.filter = filter;
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', String(active));
+        btn.setAttribute('aria-controls', 'portfolio-grid');
+        btn.appendChild(el('span', null, label));
+        btn.appendChild(el('span', 'filter-count', pad(count)));
+        btn.addEventListener('click', replay);
+        return btn;
+      };
+
+      filters.textContent = '';
+      filters.appendChild(makeBtn('all', 'All Properties', window.PROPERTIES.length, true));
+      TYPE_ORDER.filter(t => counts[t]).forEach(t => {
+        filters.appendChild(makeBtn(t, TYPE_LABELS[t], counts[t], false));
+      });
+    }
   }
 
 })();

@@ -185,11 +185,18 @@
         <p class="section-sub section-sub-light">Explore 10 curated property files — stills and cinematic walkthroughs — across Cape Town's premier postcodes.</p>
       </div>
 
+      <div class="portfolio-filters" id="portfolio-filters" role="tablist" aria-label="Filter by property type">
+        <!-- Filter tabs render here from the property types in properties.js -->
+      </div>
+
       <div class="portfolio-grid" id="portfolio-grid">
         <!-- PropertyCard components render here from properties.js (data)
              via catalogue.js (components). To add a property, edit
              properties.js only — no HTML changes needed. -->
       </div>
+      <noscript>
+        <p class="catalogue-fallback">The property showcase requires JavaScript. Please enable it, or contact us on WhatsApp to receive our portfolio directly.</p>
+      </noscript>
 
       <div class="portfolio-cta-wrap">
         <a href="https://wa.me/27821234567?text=Hi%2C%20I'd%20like%20to%20book%20a%20shoot%20with%20APEX" class="btn btn-primary btn-lg" id="portfolio-book-cta" target="_blank" rel="noopener noreferrer">
