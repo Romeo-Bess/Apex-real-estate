@@ -70,6 +70,17 @@
     return null;
   }
 
+  /* Local walkthrough files (e.g. AI-generated clips dropped in /videos)
+     play in the native player; external URLs become sandboxed embeds. */
+  const SAFE_VIDEO_FILE = /^videos\/[A-Za-z0-9._-]+\.(?:mp4|webm)$/i;
+
+  function resolveVideo(raw) {
+    if (typeof raw !== 'string' || raw === '') return null;
+    if (SAFE_VIDEO_FILE.test(raw)) return { kind: 'file', src: raw };
+    const embed = sanitizeVideoUrl(raw);
+    return embed ? { kind: 'embed', src: embed } : null;
+  }
+
   /* ─── DOM HELPERS ────────────────────────────────────────── */
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -109,7 +120,7 @@
 
     const badges = el('div', 'card-badges');
     badges.appendChild(el('span', 'card-type', TYPE_SINGULAR[property.type] || 'Property'));
-    if (sanitizeVideoUrl(property.video)) {
+    if (resolveVideo(property.video)) {
       badges.appendChild(el('span', 'portfolio-film-badge', '▸ Film'));
     }
 
@@ -137,7 +148,7 @@
         thumbsWrap, stagePhoto, stageVideo, stageImg, counterEl, ticksWrap,
         prevBtn, nextBtn, stillsBtn, filmBtn, ctaLink;
 
-    let photos = [], frame = 0, videoUrl = null, current = null;
+    let photos = [], frame = 0, video = null, current = null;
     let lastFocus = null, isOpen = false, hideTimer = null;
 
     function build() {
@@ -284,7 +295,7 @@
     }
 
     function setMode(mode) {
-      const film = mode === 'film' && !!videoUrl;
+      const film = mode === 'film' && !!video;
       stagePhoto.classList.toggle('hidden', film);
       stageVideo.classList.toggle('hidden', !film);
       stillsBtn.classList.toggle('active', !film);
@@ -293,16 +304,28 @@
       filmBtn.setAttribute('aria-selected', String(film));
 
       if (film && !stageVideo.firstChild) {
-        const iframe = document.createElement('iframe');
-        iframe.className = 'pv-iframe';
-        iframe.src = videoUrl;
-        iframe.title = `${current.title} — video walkthrough`;
-        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
-        iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.loading = 'lazy';
-        stageVideo.appendChild(iframe);
+        if (video.kind === 'file') {
+          /* Local walkthrough — native player, no third-party branding */
+          const player = document.createElement('video');
+          player.className = 'pv-player';
+          player.src = video.src;
+          player.controls = true;
+          player.playsInline = true;
+          player.preload = 'metadata';
+          player.setAttribute('controlslist', 'nodownload');
+          stageVideo.appendChild(player);
+        } else {
+          const iframe = document.createElement('iframe');
+          iframe.className = 'pv-iframe';
+          iframe.src = video.src;
+          iframe.title = `${current.title} — video walkthrough`;
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
+          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          iframe.loading = 'lazy';
+          stageVideo.appendChild(iframe);
+        }
       }
       /* Tear the player down when leaving film mode so audio stops */
       if (!film) stageVideo.textContent = '';
@@ -314,7 +337,7 @@
 
       current = property;
       photos = safePhotos(property.photos);
-      videoUrl = sanitizeVideoUrl(property.video);
+      video = resolveVideo(property.video);
       lastFocus = sourceEl || document.activeElement;
 
       fileEl.textContent = `Project File ${pad(index + 1)} · ${TYPE_SINGULAR[property.type] || 'Property'} · Cape Town`;
@@ -350,7 +373,7 @@
       prevBtn.style.display = nav;
       nextBtn.style.display = nav;
 
-      filmBtn.style.display = videoUrl ? '' : 'none';
+      filmBtn.style.display = video ? '' : 'none';
       ctaLink.href = `https://wa.me/${WA_NUMBER}?text=` +
         encodeURIComponent(`Hi, I'd like to book a shoot like "${property.title}"`);
 
@@ -378,6 +401,34 @@
 
     return { open };
   })();
+
+  /* ─── HERO VIDEO (optional) ──────────────────────────────
+     If SITE_MEDIA.heroVideo names a local file, a muted looping
+     film fades in over the hero slideshow. The slideshow keeps
+     running underneath, so a missing file, a failed load or a
+     blocked autoplay silently falls back to it. */
+  const heroWrap = document.getElementById('hero-slideshow');
+  const heroSrc = (window.SITE_MEDIA || {}).heroVideo;
+  if (heroWrap && typeof heroSrc === 'string' && SAFE_VIDEO_FILE.test(heroSrc)) {
+    const heroVid = document.createElement('video');
+    heroVid.className = 'hero-video';
+    heroVid.muted = true;
+    heroVid.loop = true;
+    heroVid.autoplay = true;
+    heroVid.playsInline = true;
+    heroVid.setAttribute('muted', '');       /* iOS needs the attribute form */
+    heroVid.setAttribute('playsinline', '');
+    heroVid.setAttribute('aria-hidden', 'true');
+    heroVid.preload = 'auto';
+    heroVid.src = heroSrc;
+    /* Fade in only once frames are actually advancing — if autoplay is
+       blocked the video stays invisible and the slideshow runs instead */
+    heroVid.addEventListener('playing', () => heroVid.classList.add('is-playing'), { once: true });
+    heroVid.addEventListener('error', () => heroVid.remove(), { once: true });
+    heroWrap.appendChild(heroVid);
+    const played = heroVid.play();
+    if (played && typeof played.catch === 'function') played.catch(() => {});
+  }
 
   /* ─── RENDER THE CATALOGUE ───────────────────────────────── */
   const grid = document.getElementById('portfolio-grid');

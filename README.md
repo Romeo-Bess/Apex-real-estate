@@ -34,6 +34,7 @@ Professional property photography with 24-hour turnaround. Serving greater Cape 
 ├── properties.js       # Property catalogue data (photos + video per property)
 ├── catalogue.js        # PropertyCard + ProjectView components
 ├── images/             # AI-generated property photography
+├── videos/             # Hero film + per-property walkthrough clips (mp4)
 ├── vercel.json         # Vercel deployment config
 ├── mobile-test.js      # Puppeteer mobile test suite
 └── package.json

@@ -14,15 +14,26 @@
    apartment | estate. Filter buttons render automatically
    from whichever types exist in this file.
 
-   `video` accepts YouTube (watch / youtu.be / embed) or Vimeo
-   URLs. catalogue.js validates and rewrites it to a privacy-
-   enhanced embed before rendering; anything else is dropped.
+   `video` accepts:
+     - a local file in /videos (e.g. 'videos/camps-bay.mp4') —
+       played inline with the native player (best quality, no
+       third-party branding), or
+     - a YouTube (watch / youtu.be / embed) or Vimeo URL —
+       validated and rewritten to a privacy-enhanced embed.
+   Anything else is dropped.
 
    The demo video below is a stable public placeholder —
    replace it with your own walkthrough URLs.
    ═══════════════════════════════════════════════════════════ */
 
 'use strict';
+
+/* Site-wide media. Set heroVideo to a local file (e.g. 'videos/hero.mp4')
+   to layer a muted, looping film over the hero slideshow. The slideshow
+   stays as the automatic fallback if the file is missing or can't play. */
+window.SITE_MEDIA = {
+  heroVideo: 'videos/hero.mp4'
+};
 
 window.PROPERTIES = [
   {
@@ -38,7 +49,7 @@ window.PROPERTIES = [
       'images/prop1_terrace.png',
       'images/portfolio_kitchen.png'
     ],
-    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+    video: 'videos/bantry-bay-penthouse.mp4'
   },
   {
     id: 'constantia-manor',
@@ -66,7 +77,7 @@ window.PROPERTIES = [
       'images/prop3_interior.png',
       'images/prop3_twilight.png'
     ],
-    video: 'https://youtu.be/aqz-KE-bpKQ'
+    video: 'videos/camps-bay-infinity-villa.mp4'
   },
   {
     id: 'bishopscourt-country-house',
@@ -94,7 +105,7 @@ window.PROPERTIES = [
       'images/portfolio_exterior.png',
       'images/portfolio_twilight2.png'
     ],
-    video: 'https://www.youtube.com/embed/aqz-KE-bpKQ'
+    video: 'videos/fresnaye-architectural-mansion.mp4'
   },
   {
     id: 'higgovale-glass-estate',
@@ -120,7 +131,7 @@ window.PROPERTIES = [
       'images/prop1_terrace.png',
       'images/hero_interior.png'
     ],
-    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+    video: 'videos/clifton-cliffside-sanctuary.mp4'
   },
   {
     id: 'durbanville-vineyard-pavilion',
@@ -159,6 +170,6 @@ window.PROPERTIES = [
       'images/prop3_pool.png',
       'images/prop4_facade.png'
     ],
-    video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'
+    video: 'videos/noordhoek-parkland-estate.mp4'
   }
 ];
